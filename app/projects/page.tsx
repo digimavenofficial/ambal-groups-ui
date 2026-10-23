@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { PageFrame, PageHero, ProjectCard, projects } from "../components/site";
+
+export default function Projects() { return <PageFrame><main><PageHero label="Our projects" title="Made for the life you are building." description="Explore residential plots, villas and apartments in the fast-growing western corridors of Chennai." /><section className="container page-intro"><div className="filter-row"><Link className="filter active" href="/projects">All projects</Link><Link className="filter" href="/projects/ongoing">Ongoing</Link><Link className="filter" href="/projects/completed">Completed</Link></div></section><section className="container projects-page-grid">{projects.map((project) => <ProjectCard key={project.name} project={project} />)}</section></main></PageFrame>; }

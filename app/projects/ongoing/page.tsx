@@ -1,0 +1,2 @@
+import { PageFrame, PageHero, ProjectCard, projects } from "../../components/site";
+export default function Ongoing() { return <PageFrame><main><PageHero label="Projects / Ongoing" title="Your future is taking shape." description="Discover the communities currently coming to life across Chennai's most connected growth corridors." /><section className="container projects-page-grid" style={{ paddingTop: 80 }}>{projects.slice(0, 3).map((project) => <ProjectCard key={project.name} project={project} />)}</section></main></PageFrame>; }

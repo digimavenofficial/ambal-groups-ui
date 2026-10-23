@@ -1,0 +1,2 @@
+import { PageFrame, PageHero, ProjectCard, projects } from "../../components/site";
+export default function Completed() { return <PageFrame><main><PageHero label="Projects / Completed" title="Places that are already home." description="A selection of neighbourhoods where families have put down roots, made memories and begun their next chapters." /><section className="container projects-page-grid" style={{ paddingTop: 80 }}>{projects.slice(1).map((project) => <ProjectCard key={project.name} project={project} />)}</section></main></PageFrame>; }

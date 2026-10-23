@@ -1,0 +1,2 @@
+import { PageFrame, PageHero } from "../components/site";
+export default function Gallery() { return <PageFrame><main><PageHero label="Gallery" title="A closer look at life at Ambal." description="Explore the textures, spaces and small details that shape our homes and communities." /><section className="container gallery-grid" style={{ paddingTop: 80 }}><div className="gallery-item" /><div className="gallery-item" /><div className="gallery-item" /><div className="gallery-item" /><div className="gallery-item" /><div className="gallery-item" /></section></main></PageFrame>; }
