@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "./header";
 
 export const projects = [
   { name: "Venkateswara Nagar", location: "Aranvayal Kuppam", type: "DTCP approved villa plots", price: "From ₹1,999 / sq.ft" },
@@ -6,13 +7,6 @@ export const projects = [
   { name: "Ambal Heights", location: "Thirumazhisai", type: "1 & 2 BHK apartments", price: "From ₹22.27 Lakhs" },
   { name: "Srinivasa Garden", location: "Kuthambakkam", type: "Residential plotted community", price: "Launching soon" },
 ];
-
-export function Header() {
-  return <header className="site-header"><div className="container nav">
-    <Link href="/" className="brand"><span className="brand-mark">A</span><span>Sri Ambal<br />Promoters</span></Link>
-    <nav className="nav-links"><Link href="/about">About</Link><Link href="/projects">Projects</Link><Link href="/gallery">Gallery</Link><Link href="/blog">Journal</Link><Link href="/contact" className="nav-cta">Start a conversation ↗</Link></nav>
-  </div></header>;
-}
 
 export function Footer() {
   return <footer className="site-footer"><div className="container">
@@ -24,7 +18,7 @@ export function Footer() {
   </div></footer>;
 }
 
-export function PageFrame({ children }: { children: React.ReactNode }) { return <><Header />{children}<Footer /></>; }
+export function PageFrame({ children }: { children: React.ReactNode }) { return <><Header overlay />{children}<Footer /></>; }
 
 export function PageHero({ label, title, description }: { label: string; title: string; description: string }) { return <section className="page-hero"><div className="container"><span className="eyebrow">{label}</span><h1 className="serif">{title}</h1><p>{description}</p></div></section>; }
 
