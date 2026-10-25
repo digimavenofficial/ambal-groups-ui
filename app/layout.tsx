@@ -20,7 +20,7 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "Ambal Groups | Homes with a sense of place",
-  description: "Thoughtful homes and land communities across Chennai's growing corridors.",
+  description: "Trusted plotted developments and select villa communities across Chennai's growing corridors.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
