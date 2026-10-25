@@ -19,7 +19,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sri Ambal Promoters | Homes with a sense of place",
+  title: "Ambal Groups | Homes with a sense of place",
   description: "Thoughtful homes and land communities across Chennai's growing corridors.",
 };
 

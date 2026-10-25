@@ -1,68 +1,90 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+const navigation = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Blog", href: "/blog" },
+];
 
 export default function Header({ overlay = false }: { overlay?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const isActive = (path: string) => path === "/" ? pathname === "/" : pathname.startsWith(path);
-  const toggleDropdown = (name: string) => setOpenDropdown((open) => open === name ? null : name);
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setOpenDropdown(null);
-  };
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={`site-header${overlay ? " site-header-overlay" : ""}${menuOpen ? " menu-is-open" : ""}`}>
+    <header
+      className={`site-header${overlay ? " site-header-overlay" : ""}${menuOpen ? " menu-is-open" : ""}`}
+    >
       <div className="container nav">
-        <Link href="/" className="brand" aria-label="Sri Ambal Promoters home" onClick={closeMenu}>
-          <span className="brand-mark">A</span>
-          <span className="brand-name"><strong>Sri Ambal</strong><small>Promoters</small></span>
+        <Link
+          href="/"
+          className="brand"
+          aria-label="Ambal Groups home"
+          onClick={closeMenu}
+        >
+          <Image
+            className="brand-logo"
+            src="/logo.jpeg"
+            alt="Ambal Groups"
+            width={180}
+            height={180}
+            priority
+          />
+          <span className="brand-name">
+            <strong>Ambal Groups</strong>
+          </span>
         </Link>
         <nav className="nav-links" aria-label="Main navigation">
-          <Link href="/" className={isActive("/") ? "is-active" : undefined}>Home</Link>
-          <div className={`nav-dropdown${isActive("/about") ? " is-active" : ""}`} onMouseEnter={() => setOpenDropdown("about")} onMouseLeave={() => setOpenDropdown(null)}>
-            <button type="button" aria-expanded={openDropdown === "about"} onClick={() => toggleDropdown("about")}>About</button>
-            <div className={`dropdown-menu${openDropdown === "about" ? " is-open" : ""}`}><Link href="/about" onClick={closeMenu}>Our story</Link><Link href="/about#team" onClick={closeMenu}>Our team</Link></div>
-          </div>
-          <Link href="/gallery" className={isActive("/gallery") ? "is-active" : undefined}>What We Do</Link>
-          <div className={`nav-dropdown${isActive("/projects") ? " is-active" : ""}`} onMouseEnter={() => setOpenDropdown("projects")} onMouseLeave={() => setOpenDropdown(null)}>
-            <button type="button" aria-expanded={openDropdown === "projects"} onClick={() => toggleDropdown("projects")}>Projects</button>
-            <div className={`dropdown-menu${openDropdown === "projects" ? " is-open" : ""}`}><Link href="/projects/ongoing" onClick={closeMenu}>Ongoing</Link><Link href="/projects/completed" onClick={closeMenu}>Completed</Link></div>
-          </div>
-          <Link href="/contact">Careers</Link>
-          <Link href="/contact" className={isActive("/contact") ? "is-active" : undefined}>Contact</Link>
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={isActive(item.href) ? "is-active" : undefined}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
         <button
           className="menu-toggle"
           type="button"
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-          onClick={() => setMenuOpen((open) => {
-            if (open) setOpenDropdown(null);
-            return !open;
-          })}
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
+          onClick={() => setMenuOpen((open) => !open)}
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
-      <nav id="mobile-navigation" className={`mobile-navigation${menuOpen ? " is-open" : ""}`} aria-label="Mobile navigation">
-        <Link href="/" className={isActive("/") ? "is-active" : undefined} onClick={closeMenu}>Home</Link>
-        <div className={`mobile-dropdown${isActive("/about") ? " is-active" : ""}`}>
-          <button type="button" aria-expanded={openDropdown === "about"} onClick={() => toggleDropdown("about")}>About</button>
-          <div className={`mobile-submenu${openDropdown === "about" ? " is-open" : ""}`}><Link href="/about" onClick={closeMenu}>Our story</Link><Link href="/about#team" onClick={closeMenu}>Our team</Link></div>
-        </div>
-        <Link href="/gallery" className={isActive("/gallery") ? "is-active" : undefined} onClick={closeMenu}>What We Do</Link>
-        <div className={`mobile-dropdown${isActive("/projects") ? " is-active" : ""}`}>
-          <button type="button" aria-expanded={openDropdown === "projects"} onClick={() => toggleDropdown("projects")}>Projects</button>
-          <div className={`mobile-submenu${openDropdown === "projects" ? " is-open" : ""}`}><Link href="/projects/ongoing" onClick={closeMenu}>Ongoing</Link><Link href="/projects/completed" onClick={closeMenu}>Completed</Link></div>
-        </div>
-        <Link href="/contact" onClick={closeMenu}>Careers</Link>
-        <Link href="/contact" className={isActive("/contact") ? "is-active" : undefined} onClick={closeMenu}>Contact</Link>
+      <nav
+        id="mobile-navigation"
+        className={`mobile-navigation${menuOpen ? " is-open" : ""}`}
+        aria-label="Mobile navigation"
+      >
+        {navigation.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={isActive(item.href) ? "is-active" : undefined}
+            onClick={closeMenu}
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
     </header>
   );
