@@ -7,9 +7,13 @@ const history = [
   "Sri Ambal Gajalakshmi Nagar Phase I, II - Mangadu",
   "Sri Ambal Vijayalakshmi Nagar Phase I, II, III - Ayilcheri (Kannapalayam)",
   "Sri Ambal Garden, Kannapalayam",
-  "Sri Ambal Vijayalakshmi Nagar, Mettupalayam",
+  "Sri Ambal Garden, Kannapalayam, Avadi",
+  "Sri Ambal Vijayalakshmi Nagar, Mettupalayam, Avadi",
+  "Sri Ambal Vijayalakshmi Nagar, Eppur",
   "Sri Ambal Vijayalakshmi Nagar, Meppur",
+  "Sri Ambal Vijayalakshmi Nagar, Poonamallee",
   "Sri Ambal Venkateswara Nagar Phase I, II, III - Aranvayal Kuppam (Present running project)",
+  "Sri Ambal Ikkadu (Current project)",
 ];
 
 export default function About() {

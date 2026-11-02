@@ -24,7 +24,7 @@ export default async function ProjectDetails({
       <main>
         <section className="project-detail-hero">
           <div className="container project-detail-heading">
-            <span className="eyebrow">{project.status === "ongoing" ? "Ongoing project" : "Completed project"}</span>
+            <span className="eyebrow">{project.status === "ongoing" ? "Ongoing project" : project.status === "upcoming" ? "Upcoming project" : "Completed project"}</span>
             <h1 className="serif">{project.name}</h1>
             <p>{project.location}</p>
           </div>
@@ -45,6 +45,7 @@ export default async function ProjectDetails({
             <ul className="project-highlights">
               {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
             </ul>
+            <a className="button button-cream" href="/Greenscape%20Brochure.pdf" download>Download project brochure <span className="arrow">↓</span></a>
             <Link href="/contact" className="button button-dark">Enquire about this project <span className="arrow">↗</span></Link>
           </div>
         </section>

@@ -5,10 +5,10 @@ import Header from "./header";
 export const projects = [
   {
     slug: "2bhk-individual-villa-for-sale",
-    name: "2BHK Individual Villa for Sale",
+    name: "2BHK Individual Villa",
     location: "Aranvayal Kuppam",
     type: "2BHK individual villa",
-    price: "From ₹30.50 Lakhs",
+    price: "Completed project",
     status: "completed",
     image: "/project-images/1.jpg",
     propertyId: "None",
@@ -21,20 +21,20 @@ export const projects = [
     name: "Sri Ambal Venkateswara Nagar - Phase I",
     location: "Aranvayol Kuppam, Tiruvallur",
     type: "DTCP approved villa plots",
-    price: "₹1,999 / sq.ft",
+    price: "Completed project",
     status: "completed",
     image: "/project-images/2.webp",
     propertyId: "Ambal-2024-12",
     facts: ["Plot size: 571 to 1972 sq ft", "Park: Available", "Kuthambakkam bus stand: 10 minutes", "Poonamallee metro station: 20 minutes"],
     description: "DTCP approved villa plots for sale at Aranvayol Kuppam, near Tirumazhisai.",
-    highlights: ["Launching offer - ₹1,999/sq.ft", "10 minutes from Kuthambakkam bus stand", "15 minutes from Chennai - Bangalore NH", "20 minutes from the nearest metro station", "Near the upcoming Chennai peripheral ring road and Tirumazhisai satellite township"],
+    highlights: ["10 minutes from Kuthambakkam bus stand", "15 minutes from Chennai - Bangalore NH", "20 minutes from the nearest metro station", "Near the upcoming Chennai peripheral ring road and Tirumazhisai satellite township"],
   },
   {
     slug: "1bhk-and-2bhk-flats-for-sale-in-poonamallee",
     name: "1BHK and 2BHK Flats for Sale in Poonamallee",
     location: "Sri Ambal Vijayalakshmi Nagar, Meppur",
     type: "1BHK and 2BHK flats",
-    price: "From ₹22.27 Lakhs",
+    price: "Completed project",
     status: "completed",
     image: "/project-images/3.webp",
     propertyId: "RH-2017-12",
@@ -47,13 +47,65 @@ export const projects = [
     name: "Sri Ambal Venkateswara Nagar Phase II",
     location: "Aranvayol Kuppam, Tiruvallur",
     type: "DTCP approved villa plots",
-    price: "Launching soon",
-    status: "ongoing",
+    price: "Completed project",
+    status: "completed",
     image: "/project-images/4.webp",
     propertyId: "RH-2017-10",
     facts: ["Kuthambakkam bus stand: 10 minutes", "Chennai - Bangalore NH: 15 minutes", "Nearest metro station: 20 minutes"],
     description: "DTCP approved villa plots for sale at Aranvayol Kuppam, near Tirumazhisai.",
     highlights: ["10 minutes from Kuthambakkam bus stand", "15 minutes from Chennai - Bangalore NH", "20 minutes from the nearest metro station", "Near the upcoming Chennai peripheral ring road and Tirumazhisai satellite township"],
+  },
+  {
+    slug: "sri-ambal-venkateswara-nagar-phase-iii-apartments",
+    name: "Sri Ambal Venkateswara Nagar Phase III Apartments",
+    location: "Ikkadu",
+    type: "Apartments",
+    price: "Details available on enquiry",
+    status: "ongoing",
+    image: "/project-images/4.webp",
+    propertyId: "Ambal-Phase-III",
+    facts: ["Location: Ikkadu", "Apartments: Phase III", "Enquiries: Open"],
+    description: "Phase III apartment homes planned for families looking for a well-connected address in Ikkadu.",
+    highlights: ["Current project", "Planned residential apartments", "Enquire for availability and specifications"],
+  },
+  {
+    slug: "ikkadu-residential-project",
+    name: "Ambal Groups Ikkadu",
+    location: "Ikkadu",
+    type: "Residential development",
+    price: "Details available on enquiry",
+    status: "ongoing",
+    image: "/project-images/2.webp",
+    propertyId: "Ambal-Ikkadu",
+    facts: ["Location: Ikkadu", "Current project", "Enquiries: Open"],
+    description: "A current Ambal Groups residential project in Ikkadu.",
+    highlights: ["Current project", "Growing residential location", "Enquire for project details"],
+  },
+  {
+    slug: "pavakam-upcoming-project",
+    name: "Ambal Groups Pavakam",
+    location: "Pavakam",
+    type: "Upcoming residential project",
+    price: "Coming soon",
+    status: "upcoming",
+    image: "/project-images/3.webp",
+    propertyId: "Ambal-Pavakam",
+    facts: ["Location: Pavakam", "Upcoming project", "More details coming soon"],
+    description: "An upcoming Ambal Groups project planned for Pavakam.",
+    highlights: ["Upcoming project", "More details coming soon", "Register your interest through our contact page"],
+  },
+  {
+    slug: "pankam-avadi-apartments",
+    name: "Pankam, Avadi Apartments",
+    location: "Pankam, Avadi",
+    type: "Apartments",
+    price: "Completed project",
+    status: "completed",
+    image: "/project-images/1.jpg",
+    propertyId: "Ambal-Pankam-Avadi",
+    facts: ["Location: Pankam, Avadi", "Apartments", "Completed project"],
+    description: "Completed apartment homes at Pankam, Avadi.",
+    highlights: ["Completed project", "Convenient Avadi location", "Enquire for project information"],
   },
 ];
 
@@ -95,10 +147,9 @@ export function Footer() {
                 <br />
                 Poonamallee, Chennai-600 056
               </span>
-              <a href="mailto:admin@porursriambal.com">
-                admin@porursriambal.com
+              <a href="mailto:support@ambalgroups.com">
+                support@ambalgroups.com
               </a>
-              <a href="tel:+919444274567">+91-9444-274-567</a>
               <a href="tel:+919444264567">+91-9444-264-567</a>
               {/* <span>Instagram · Facebook · YouTube</span> */}
             </div>
@@ -172,14 +223,18 @@ export function WhatsAppButton() {
   return (
     <a
       className="whatsapp-button"
-      href="https://wa.me/919444274567"
+      href="https://wa.me/919444264567"
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with Ambal Groups on WhatsApp"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.55 0 .23 5.32.23 11.86c0 2.09.55 4.13 1.59 5.92L.13 24l6.36-1.67a11.86 11.86 0 0 0 5.59 1.42h.01c6.53 0 11.84-5.32 11.84-11.86 0-3.17-1.23-6.14-3.43-8.39Zm-8.42 18.2h-.01a9.84 9.84 0 0 1-5.02-1.38l-.36-.21-3.77.99 1.01-3.68-.23-.38a9.82 9.82 0 0 1-1.5-5.18C2.2 6.44 6.63 2 12.08 2a9.8 9.8 0 0 1 6.98 2.9 9.87 9.87 0 0 1 2.87 7c0 5.44-4.42 9.8-9.85 9.8Z" />
-      </svg>
+      <Image
+        className="whatsapp-icon"
+        src="/whatsapp.svg"
+        alt=""
+        width={800}
+        height={800}
+      />
     </a>
   );
 }

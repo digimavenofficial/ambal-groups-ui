@@ -36,8 +36,8 @@ export default function Header({ overlay = false }: { overlay?: boolean }) {
             className="brand-logo"
             src="/logo.jpeg"
             alt="Ambal Groups"
-            width={180}
-            height={180}
+            width={220}
+            height={220}
             priority
           />
           <span className="brand-name">

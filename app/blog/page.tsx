@@ -3,17 +3,17 @@ import { PageFrame, PageHero } from "../components/site";
 
 export const blogs = [
   {
-    slug: "poonamallee-porur-metro-train-nearing-completion",
-    title: "Poonamallee - Porur metro train nearing completion",
+    slug: "phase-iii-apartments-ikkadu",
+    title: "Phase III apartments planned for Ikkadu",
     author: "vijaysiva",
-    date: "January 12, 2025",
-    category: "Chennai Metro Train",
+    date: "November 2, 2026",
+    category: "Project update",
     image: "/blog-images/POONAMALLEE%20metro.jpg",
-    excerpt: "The Poonamallee-Porur stretch of Chennai Metro Phase II is progressing steadily, bringing improved connectivity to the western suburbs.",
+    excerpt: "Ambal Groups' Phase III apartments bring a new residential opportunity to the growing Ikkadu corridor.",
     content: [
-      "Chennai Metro Phase II is being delivered across three corridors covering 118.9 km. The Poonamallee-Porur section forms part of Corridor 4 and is planned to improve daily mobility across this growing part of the city.",
-      "Station construction and viaduct work have progressed significantly, while systems, lifts, escalators, tracks and overhead equipment are being installed in stages.",
-      "The project is expected to strengthen access to Poonamallee, Porur, Kumananchavadi and surrounding growth corridors.",
+      "Phase III is a current Ambal Groups apartment project planned for families seeking a well-connected home in Ikkadu.",
+      "The project is part of Ambal Groups' continuing residential development across Chennai's growing western corridors.",
+      "Contact our team for current availability, specifications and project updates.",
     ],
   },
   {
@@ -31,17 +31,17 @@ export const blogs = [
     ],
   },
   {
-    slug: "thirumazhisai-satellite-town",
-    title: "Thirumazhisai Satellite Town - CMDA to acquire 330 acres of land",
+    slug: "pavakam-upcoming-project",
+    title: "Ambal Groups announces upcoming Pavakam project",
     author: "vijaysiva",
     date: "January 12, 2025",
-    category: "Thirumazhisai Satellite Town",
+    category: "Upcoming project",
     image: "/blog-images/thirumazhisai-satellite-town.jpg",
-    excerpt: "A proposed loop road and wider satellite-town plan could bring new infrastructure and development opportunities to Thirumazhisai.",
+    excerpt: "Pavakam is the next upcoming location in Ambal Groups' growing portfolio of residential projects.",
     content: [
-      "The Chennai Metropolitan Development Authority has proposed land acquisition for a loop road in Thirumazhisai New Town under the Land Pooling Area Development Scheme.",
-      "The wider satellite-town programme is intended to support planned growth, public amenities, research and development zones, and new economic activity.",
-      "A long-term roadmap is expected to guide infrastructure development and help coordinate the region's future expansion.",
+      "Ambal Groups is preparing an upcoming residential project in Pavakam.",
+      "More details about the project, availability and specifications will be shared as planning progresses.",
+      "Register your interest through the contact page to receive future updates.",
     ],
   },
   {

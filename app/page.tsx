@@ -1,34 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { PageFrame, ProjectCard, projects } from "./components/site";
 
 export default function Home() {
-  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [brochureSent, setBrochureSent] = useState(false);
-
-  useEffect(() => {
-    if (!isBrochureOpen) return;
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsBrochureOpen(false);
-    };
-    document.addEventListener("keydown", closeOnEscape);
-    return () => document.removeEventListener("keydown", closeOnEscape);
-  }, [isBrochureOpen]);
-
-  function openBrochure() {
-    setBrochureSent(false);
-    setEmail("");
-    setIsBrochureOpen(true);
-  }
-
-  function submitBrochure(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setBrochureSent(true);
-  }
-
   return (
     <PageFrame>
       <main>
@@ -52,9 +27,6 @@ export default function Home() {
               <Link href="/contact" className="button button-light">
                 Talk to us
               </Link>
-              <button className="button button-light" type="button" onClick={openBrochure}>
-                Download brochure <span className="arrow">↓</span>
-              </button>
             </div>
             <div className="hero-note">
               80% plotted developments
@@ -64,32 +36,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {isBrochureOpen && (
-          <div className="brochure-modal-backdrop" role="presentation" onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setIsBrochureOpen(false);
-          }}>
-            <section className="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-title">
-              <button className="brochure-modal-close" type="button" aria-label="Close brochure form" onClick={() => setIsBrochureOpen(false)}>×</button>
-              {brochureSent ? (
-                <div className="brochure-success">
-                  <span className="eyebrow">Request received</span>
-                  <h2 id="brochure-title" className="serif">Please check your mail for the brochure.</h2>
-                  <p>We will send the brochure to <strong>{email}</strong> once email delivery is connected.</p>
-                  <button className="button button-dark" type="button" onClick={() => setIsBrochureOpen(false)}>Close</button>
-                </div>
-              ) : (
-                <form onSubmit={submitBrochure}>
-                  <span className="eyebrow">Download brochure</span>
-                  <h2 id="brochure-title" className="serif">Where details make the difference.</h2>
-                  <p>Enter your email address and we&apos;ll share the Ambal Groups brochure with you.</p>
-                  <label className="brochure-label" htmlFor="brochure-email">Email address</label>
-                  <input className="brochure-input" id="brochure-email" name="email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" required />
-                  <button className="button button-dark" type="submit">Send <span className="arrow">↗</span></button>
-                </form>
-              )}
-            </section>
-          </div>
-        )}
         <section className="section intro home-intro">
           <div className="container intro-grid">
             <div>
