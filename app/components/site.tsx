@@ -11,8 +11,10 @@ type Project = {
   status: "completed" | "ongoing" | "upcoming";
   image: string;
   brochureUrl?: string;
+  contactPhone?: string;
   propertyId: string;
   facts: string[];
+  summaryFacts?: { label: string; value: string }[];
   description: string;
   highlights: string[];
 };
@@ -77,9 +79,14 @@ export const projects: Project[] = [
     type: "Premium 2BHK flats",
     price: "Prebooking ₹5250/- per sq ft",
     status: "ongoing",
-    image: "/project-images/sri-ambal-%20vijayalakshmi-nagar-images/sri-ambal-vijayalakshmi-nagar-banner.jpeg",
+    image: "/project-images/sri-ambal-%20vijayalakshmi-nagar-images/sri-ambal-vijayalakshmi-nagar-banner.png",
     brochureUrl: "/project-images/sri-ambal-%20vijayalakshmi-nagar-images/sri-ambal-vijayalakshmi-nagar-brochure.pdf",
     propertyId: "Sri-Ambal-VJN-Phase-I",
+    summaryFacts: [
+      { label: "Starting price", value: "₹35.54L*" },
+      { label: "Property", value: "Premium 2BHK flats" },
+      { label: "Location", value: "Avadi | Ayilcheri" },
+    ],
     facts: [
       "Location: Avadi | Ayilcheri",
       "Units: 2BHK Premium Flats",
@@ -94,6 +101,38 @@ export const projects: Project[] = [
       "Close to Avadi and Ayilcheri connectivity",
       "Well-planned community with essential amenities",
       "Ideal for families seeking long-term value",
+    ],
+  },
+  {
+    slug: "greenscape-3-thirumazhisai",
+    name: "Greenscape-3 Thirumazhisai",
+    location: "Thirumazhisai, Chennai",
+    type: "Residential plots",
+    price: "Enquire for pricing",
+    status: "ongoing",
+    image: "/project-images/greenscape-3-thirumazhisai-images/Screenshot%202026-11-07%20161719.png",
+    brochureUrl: "/Greenscape%203%20Brochure%20Ongoing%20Project.pdf",
+    contactPhone: "+919123553555",
+    propertyId: "Greenscape-3-Thirumazhisai",
+    summaryFacts: [
+      { label: "Plot size", value: "788-1,552 sq ft" },
+      { label: "Price", value: "Enquire for pricing" },
+      { label: "Location", value: "Thirumazhisai" },
+    ],
+    facts: [
+      "Well-planned residential plots",
+      "Strategically located in Thirumazhisai",
+      "Chennai Peripheral Ring Road connectivity",
+      "Near Kuthambakkam Bus Terminus",
+    ],
+    description: "A thoughtfully planned residential plotted development in Thirumazhisai, one of West Chennai's rapidly developing corridors.",
+    highlights: [
+      "Excellent road connectivity",
+      "Easy access to Poonamallee",
+      "Close to schools, colleges and healthcare",
+      "Surrounded by developing residential communities",
+      "Convenient access to major infrastructure corridors",
+      "Suitable for investment and residential living",
     ],
   },
   {

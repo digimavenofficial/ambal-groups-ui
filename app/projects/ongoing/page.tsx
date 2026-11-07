@@ -9,18 +9,6 @@ export default function Ongoing() {
           title="Your future is taking shape."
           description="Discover the communities currently coming to life across Chennai's most connected growth corridors."
         />
-        <section className="container" style={{ paddingTop: 32, paddingBottom: 12 }}>
-          <div className="ongoing-brochure-wrap">
-            <a
-              className="button button-dark"
-              href="/project-images/sri-ambal-%20vijayalakshmi-nagar-images/sri-ambal-vijayalakshmi-nagar-brochure.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download ongoing project brochure <span className="arrow">↗</span>
-            </a>
-          </div>
-        </section>
         <section className="container projects-page-grid" style={{ paddingTop: 36 }}>
           {projects
             .filter((project) => project.status === "ongoing")
