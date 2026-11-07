@@ -23,7 +23,8 @@ export default function About() {
         <PageHero
           label="About us"
           title="A legacy of trust, built plot by plot."
-          description="Ambal Group of companies is one of Chennai's leading property developers, with over two decades of expertise in plot developments and residential housing across Chennai."
+          description="Ambal Group of companies is one of Chennai's leading property developers, with over 27 years of expertise in plot developments and residential housing across Chennai."
+          compact
         />
         <section className="container page-intro about-intro">
           <span className="eyebrow">About Ambal Groups</span>

@@ -180,13 +180,15 @@ export function PageHero({
   label,
   title,
   description,
+  compact = false,
 }: {
   label: string;
   title: string;
   description: string;
+  compact?: boolean;
 }) {
   return (
-    <section className="page-hero">
+    <section className={`page-hero${compact ? " compact" : ""}`}>
       <div className="container">
         <span className="eyebrow">{label}</span>
         <h1 className="serif">{title}</h1>

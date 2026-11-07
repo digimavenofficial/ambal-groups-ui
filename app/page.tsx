@@ -54,16 +54,16 @@ export default function Home() {
             </div>
             <div className="stats">
               <div className="stat">
-                <strong>25+</strong>
+                <strong>27+</strong>
                 <span>Years of trust</span>
               </div>
               <div className="stat">
-                <strong>1,000+</strong>
-                <span>Families served</span>
+                <strong>41+</strong>
+                <span>Projects</span>
               </div>
               <div className="stat">
-                <strong>20+</strong>
-                <span>Running projects</span>
+                <strong>5500+</strong>
+                <span>Families served</span>
               </div>
             </div>
           </div>
