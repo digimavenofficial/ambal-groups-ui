@@ -13,7 +13,7 @@ export default function Ongoing() {
           <div className="ongoing-brochure-wrap">
             <a
               className="button button-dark"
-              href="/Greenscape%203%20Brochure%20Ongoing%20Project.pdf"
+              href="/project-images/sri-ambal-%20vijayalakshmi-nagar-images/sri-ambal-vijayalakshmi-nagar-brochure.pdf"
               target="_blank"
               rel="noreferrer"
             >

@@ -80,9 +80,12 @@ export default function Home() {
               </Link>
             </div>
             <div className="project-grid">
-              {projects.slice(0, 2).map((project) => (
-                <ProjectCard key={project.name} project={project} />
-              ))}
+              {projects
+                .filter((project) => project.status === "ongoing")
+                .slice(0, 2)
+                .map((project) => (
+                  <ProjectCard key={project.name} project={project} />
+                ))}
             </div>
           </div>
         </section>

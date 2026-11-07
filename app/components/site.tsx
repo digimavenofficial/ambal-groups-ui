@@ -2,7 +2,22 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "./header";
 
-export const projects = [
+type Project = {
+  slug: string;
+  name: string;
+  location: string;
+  type: string;
+  price: string;
+  status: "completed" | "ongoing" | "upcoming";
+  image: string;
+  brochureUrl?: string;
+  propertyId: string;
+  facts: string[];
+  description: string;
+  highlights: string[];
+};
+
+export const projects: Project[] = [
   {
     slug: "2bhk-individual-villa-for-sale",
     name: "2BHK Individual Villa",
@@ -56,30 +71,30 @@ export const projects = [
     highlights: ["10 minutes from Kuthambakkam bus stand", "15 minutes from Chennai - Bangalore NH", "20 minutes from the nearest metro station", "Near the upcoming Chennai peripheral ring road and Tirumazhisai satellite township"],
   },
   {
-    slug: "sri-ambal-venkateswara-nagar-phase-iii-apartments",
-    name: "Sri Ambal Venkateswara Nagar Phase III Apartments",
-    location: "Ikkadu",
-    type: "Apartments",
-    price: "Details available on enquiry",
+    slug: "sri-ambal-vijayalakshmi-nagar-phase-i",
+    name: "Sri Ambal Vijayalakshmi Nagar - Phase I",
+    location: "Avadi | Ayilcheri",
+    type: "Premium 2BHK flats",
+    price: "Prebooking ₹5250/- per sq ft",
     status: "ongoing",
-    image: "/project-images/4.webp",
-    propertyId: "Ambal-Phase-III",
-    facts: ["Location: Ikkadu", "Apartments: Phase III", "Enquiries: Open"],
-    description: "Phase III apartment homes planned for families looking for a well-connected address in Ikkadu.",
-    highlights: ["Current project", "Planned residential apartments", "Enquire for availability and specifications"],
-  },
-  {
-    slug: "ikkadu-residential-project",
-    name: "Ambal Groups Ikkadu",
-    location: "Ikkadu",
-    type: "Residential development",
-    price: "Details available on enquiry",
-    status: "ongoing",
-    image: "/project-images/2.webp",
-    propertyId: "Ambal-Ikkadu",
-    facts: ["Location: Ikkadu", "Current project", "Enquiries: Open"],
-    description: "A current Ambal Groups residential project in Ikkadu.",
-    highlights: ["Current project", "Growing residential location", "Enquire for project details"],
+    image: "/project-images/sri-ambal-%20vijayalakshmi-nagar-images/sri-ambal-vijayalakshmi-nagar-banner.jpeg",
+    brochureUrl: "/project-images/sri-ambal-%20vijayalakshmi-nagar-images/sri-ambal-vijayalakshmi-nagar-brochure.pdf",
+    propertyId: "Sri-Ambal-VJN-Phase-I",
+    facts: [
+      "Location: Avadi | Ayilcheri",
+      "Units: 2BHK Premium Flats",
+      "Prebooking: ₹5250/sq ft",
+      "Starting price: ₹35.54L*",
+      "Approval: CMDA approved",
+    ],
+    description: "Premium 2BHK flats for sale at Sri Ambal Vijayalakshmi Nagar Phase I, Avadi.",
+    highlights: [
+      "Current prebooking opportunity",
+      "CMDA approved residential project",
+      "Close to Avadi and Ayilcheri connectivity",
+      "Well-planned community with essential amenities",
+      "Ideal for families seeking long-term value",
+    ],
   },
   {
     slug: "pavakam-upcoming-project",

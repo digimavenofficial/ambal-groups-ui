@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { PageFrame, projects } from "../../components/site";
 
 export function generateStaticParams() {
@@ -16,7 +15,23 @@ export default async function ProjectDetails({
   const project = projects.find((item) => item.slug === slug);
 
   if (!project) {
-    notFound();
+    return (
+      <PageFrame>
+        <main>
+          <section className="container" style={{ padding: "120px 0 160px" }}>
+            <div className="gallery-empty">
+              <h2 className="serif">Project not found</h2>
+              <p>The requested project is not available right now.</p>
+              <div style={{ marginTop: 24 }}>
+                <Link href="/projects" className="button button-dark">
+                  Back to projects <span className="arrow">↗</span>
+                </Link>
+              </div>
+            </div>
+          </section>
+        </main>
+      </PageFrame>
+    );
   }
 
   return (
@@ -45,7 +60,9 @@ export default async function ProjectDetails({
             <ul className="project-highlights">
               {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
             </ul>
-            <a className="button button-cream" href="/Greenscape%20Brochure.pdf" download>Download project brochure <span className="arrow">↓</span></a>
+            <a className="button button-cream" href={project.brochureUrl || "/Greenscape%20Brochure.pdf"} download>
+              Download project brochure <span className="arrow">↓</span>
+            </a>
             <Link href="/contact" className="button button-dark">Enquire about this project <span className="arrow">↗</span></Link>
           </div>
         </section>
