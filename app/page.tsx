@@ -1,9 +1,39 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { PageFrame, ProjectCard, projects } from "./components/site";
 
+const statTargets = [
+  { value: 27, suffix: "+", label: "Years of trust" },
+  { value: 41, suffix: "+", label: "Projects" },
+  { value: 5500, suffix: "+", label: "Families served" },
+];
+
 export default function Home() {
+  const [counts, setCounts] = useState<number[]>(statTargets.map(() => 0));
+
+  useEffect(() => {
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - (1 - progress) ** 3;
+
+      setCounts(
+        statTargets.map((stat) => Math.round(stat.value * eased))
+      );
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    };
+
+    const frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   return (
     <PageFrame>
       <main>
@@ -53,18 +83,15 @@ export default function Home() {
               </Link>
             </div>
             <div className="stats">
-              <div className="stat">
-                <strong>27+</strong>
-                <span>Years of trust</span>
-              </div>
-              <div className="stat">
-                <strong>41+</strong>
-                <span>Projects</span>
-              </div>
-              <div className="stat">
-                <strong>5500+</strong>
-                <span>Families served</span>
-              </div>
+              {statTargets.map((stat, index) => (
+                <div className="stat" key={stat.label}>
+                  <strong>
+                    {counts[index]}
+                    {stat.suffix}
+                  </strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
