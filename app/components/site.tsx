@@ -10,6 +10,9 @@ type Project = {
   price: string;
   status: "completed" | "ongoing" | "upcoming";
   image: string;
+  heroImage?: string;
+  overviewImage?: string;
+  bannerNote?: string;
   brochureUrl?: string;
   contactPhone?: string;
   propertyId: string;
@@ -111,6 +114,9 @@ export const projects: Project[] = [
     price: "Enquire for pricing",
     status: "ongoing",
     image: "/project-images/greenscape-3-thirumazhisai-images/Screenshot%202026-11-07%20161719.png",
+    heroImage: "/project-images/greenscape-3-thirumazhisai-images/greenscape-3-hero.jpg",
+    overviewImage: "/project-images/greenscape-3-thirumazhisai-images/Screenshot 2026-11-07 161511.png",
+    bannerNote: "EOI Open With Priority Plot Selection In The Launch Phase*",
     brochureUrl: "/Greenscape%203%20Brochure%20Ongoing%20Project.pdf",
     contactPhone: "+919123553555",
     propertyId: "Greenscape-3-Thirumazhisai",

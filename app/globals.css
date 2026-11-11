@@ -1104,47 +1104,301 @@ textarea {
 .projects-page-grid .project-card {
   min-height: 500px;
 }
-.project-detail-hero {
-  padding: 190px 0 80px;
-  background: var(--green);
+.project-landing-hero {
+  overflow: hidden;
+  padding: 185px 0 76px;
+  background: var(--green-deep);
   color: white;
 }
-.project-detail-heading h1 {
-  max-width: 850px;
-  margin: 18px 0 12px;
-  font-size: clamp(46px, 7vw, 88px);
+.project-landing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  align-items: center;
+  gap: clamp(34px, 5vw, 76px);
+}
+.project-landing-copy {
+  position: relative;
+  padding: clamp(30px, 4vw, 52px);
+  border: 1px solid rgba(214, 231, 176, 0.58);
+}
+.project-landing-copy::before {
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(214, 231, 176, 0.22);
+  content: "";
+  pointer-events: none;
+}
+.project-status-tag {
+  position: relative;
+  display: inline-flex;
+  padding: 10px 15px;
+  background: var(--lime);
+  color: var(--green-deep);
+  font-size: 12px;
+  font-weight: 700;
+}
+.project-location-kicker {
+  position: relative;
+  margin: 28px 0 12px;
+  color: var(--lime);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.project-landing-copy h1 {
+  position: relative;
+  margin: 0;
+  font-size: clamp(42px, 5vw, 68px);
   font-weight: 400;
+  line-height: 1.04;
+}
+.project-landing-description {
+  position: relative;
+  max-width: 520px;
+  margin: 22px 0 26px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+}
+.project-landing-facts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.project-landing-facts p {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding-left: 10px;
+  border-left: 2px solid var(--lime);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.project-landing-facts p span {
+  color: var(--lime);
+  font-size: 10px;
+  font-weight: 700;
+}
+.project-landing-price {
+  position: relative;
+  display: grid;
+  gap: 7px;
+  padding-top: 22px;
+}
+.project-landing-price span,
+.project-pricing-panel > span {
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.project-landing-price strong {
+  color: var(--lime);
+  font-family: var(--font-marcellus);
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 700;
+}
+.project-landing-actions {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 24px;
+}
+.project-scroll-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+.project-landing-media {
+  display: grid;
+  gap: 14px;
+}
+.project-landing-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.42;
+  overflow: hidden;
+  border-radius: 50% 50% 4px 4px / 46% 46% 4px 4px;
+  background: var(--green);
+}
+.project-landing-visual img {
+  object-fit: cover;
+}
+.project-image-caption {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 9px 13px;
+  background: rgba(20, 55, 44, 0.9);
+  color: white;
+  font-size: 11px;
+}
+.project-hero-ribbon {
+  margin: 0;
+  display: grid;
+  min-height: 108px;
+  place-items: center;
+  padding: 24px clamp(22px, 5vw, 48px);
+  border: 1px solid rgba(20, 55, 44, 0.14);
+  background: #d7c27f;
+  color: var(--green-deep);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+}
+.project-image-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 14px 4px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+  font-weight: 600;
+}
+.project-image-scroll span:last-child {
+  color: var(--lime);
+  font-size: 20px;
   line-height: 1;
 }
-.project-detail-heading p {
-  margin: 0;
-  color: rgba(255, 255, 255, .72);
+.project-overview-section {
+  padding: 110px 0;
+  background: var(--paper);
 }
-.project-detail {
+.project-overview-grid {
   display: grid;
-  gap: 36px;
-  padding-top: 150px;
-  padding-bottom: 120px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(48px, 7vw, 90px);
 }
-.project-detail-image {
-  overflow: hidden;
-  border-radius: 18px;
-  background: var(--cream);
-}
-.project-banner-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.project-detail-heading h1 {
-  max-width: 850px;
-  margin: 12px 0 8px;
-  font-size: clamp(38px, 6vw, 72px);
+.project-overview-copy h2,
+.project-highlights-heading h2,
+.project-pricing-grid h2 {
+  margin: 18px 0;
+  font-size: clamp(36px, 4.5vw, 58px);
   font-weight: 400;
-  line-height: 1.02;
+  line-height: 1.08;
 }
-.project-detail-heading p {
+.project-overview-copy > p,
+.project-pricing-grid > div:first-child > p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+.project-story-note {
+  display: grid;
+  gap: 6px;
+  margin-top: 28px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.project-story-note span {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.project-story-note strong {
+  color: var(--green);
+}
+.project-overview-copy .project-eoi-note {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 600;
+}
+.project-overview-visual {
+  position: relative;
+  min-height: 440px;
+  aspect-ratio: 1.12;
+  padding: 12px;
+  border: 1px solid #bca567;
+}
+.project-overview-visual img {
+  object-fit: cover;
+}
+.project-highlights-section {
+  padding: 105px 0 115px;
+  background: var(--green-deep);
+  color: white;
+}
+.project-highlights-heading {
+  max-width: 760px;
+  margin-bottom: 42px;
+}
+.project-highlights-heading h2 {
+  margin-bottom: 14px;
+}
+.project-highlights-heading > p {
+  color: rgba(255, 255, 255, 0.76);
+}
+.project-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 48px;
+}
+.project-highlight {
+  min-height: 145px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+.project-highlight > span {
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 700;
+}
+.project-highlight h3 {
+  margin: 12px 0 7px;
+  color: var(--lime);
+  font-size: 17px;
+}
+.project-highlight p {
   margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.project-pricing-section {
+  padding: 105px 0;
+  background: var(--paper);
+}
+.project-pricing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: 64px;
+}
+.project-pricing-grid h2 {
+  max-width: 650px;
+}
+.project-pricing-panel {
+  display: grid;
+  gap: 12px;
+  padding: clamp(26px, 4vw, 44px);
+  border-left: 3px solid #bca567;
+  background: #e9eadf;
+}
+.project-pricing-panel > span {
+  color: var(--green);
+}
+.project-pricing-panel > strong {
+  color: var(--green-deep);
+  font-family: var(--font-marcellus);
+  font-size: clamp(28px, 3.5vw, 42px);
+  line-height: 1.15;
+}
+.project-pricing-panel > p {
+  margin: 0 0 8px;
   color: var(--muted);
 }
 .project-summary-marquee {
@@ -1659,26 +1913,49 @@ textarea {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .project-detail-hero {
-    padding: 150px 0 60px;
+  .project-landing-hero {
+    padding: 130px 0 56px;
   }
-  .project-detail {
+  .project-landing-grid,
+  .project-overview-grid,
+  .project-pricing-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding-top: 112px;
-    padding-bottom: 80px;
+    gap: 34px;
   }
-  .project-detail-image {
-    border-radius: 18px;
+  .project-landing-copy {
+    padding: 30px 24px;
   }
-  .project-information {
+  .project-landing-copy h1 {
+    font-size: clamp(40px, 11vw, 58px);
+  }
+  .project-landing-facts {
+    gap: 12px;
+  }
+  .project-landing-visual {
+    width: min(100%, 520px);
+    justify-self: center;
+    aspect-ratio: 1.42;
+  }
+  .project-overview-section,
+  .project-highlights-section,
+  .project-pricing-section {
+    padding: 72px 0;
+  }
+  .project-overview-visual {
+    min-height: 0;
+    aspect-ratio: 1.1;
+  }
+  .project-highlights-grid {
     grid-template-columns: 1fr;
+  }
+  .project-highlight {
+    min-height: 0;
+  }
+  .project-pricing-grid {
     gap: 28px;
   }
-  .project-overview-copy h2 {
-    font-size: 32px;
-  }
-  .project-detail-actions .button {
+  .project-landing-actions .button,
+  .project-pricing-grid .button {
     flex: 1 1 100%;
     justify-content: center;
   }
